@@ -41,7 +41,7 @@ A comprehensive, production-ready MLOps pipeline for cryptocurrency price predic
 - **🧪 Testing**: Comprehensive test suite with pytest and coverage reporting
 - **🔒 Security**: Automated security scanning with Bandit
 - **📚 Documentation**: Auto-generated API documentation with pdoc
-- **⚡ Just Commands**: Simplified development workflow with justfile
+
 
 ## 📋 Table of Contents
 
@@ -95,10 +95,10 @@ WANDB_API_KEY=your-wandb-api-key
 ### 1. Run the Complete Pipeline
 ```bash
 # Using the main orchestrator
+PYTHONPATH=src
 python main.py
 
-# Or using just commands
-just run-pipeline
+
 ```
 
 ### 2. Start the API Server
@@ -208,26 +208,7 @@ Options:
   --end-date YYYY-MM-DD         End date for data fetching
 ```
 
-### Just Commands
 
-```bash
-# Development workflow
-just format                    # Format code with Black and isort
-just check-code               # Run linting and type checking
-just test                     # Run tests with coverage
-just doc                      # Generate documentation
-
-# MLflow operations
-just mlflow-run              # Run MLflow project
-just mlflow-ui               # Start MLflow UI
-
-# Docker operations
-just docker-build            # Build Docker image
-just docker-run              # Run Docker container
-
-# Package management
-just install                 # Install dependencies
-just clean                   # Clean build artifacts
 ```
 
 ## 🌐 API Documentation
@@ -332,8 +313,6 @@ python main.py data_source.start_date=2024-01-01 preprocessing.scaling.method=mi
 # Using pytest directly
 pytest
 
-# Using just commands
-just test
 ```
 
 ### Test Categories
@@ -353,9 +332,6 @@ pytest --cov=src --cov-report=html
 
 ### Test Coverage
 ```bash
-# Generate coverage report
-just check-coverage
-
 # View coverage in browser
 open htmlcov/index.html
 ```
@@ -425,51 +401,8 @@ uv sync --group=check,commit,dev,doc
 # Install pre-commit hooks
 pre-commit install
 
-# Setup git hooks
-just setup-hooks
 ```
 
-### Code Quality Tools
-
-```bash
-# Format code
-just format
-
-# Lint code
-just check-code
-
-# Type checking
-just check-type
-
-# Security scanning
-just check-security
-
-# All checks
-just check
-```
-
-### Git Workflow
-
-```bash
-# Conventional commits
-just commit
-
-# Create release
-just release
-
-# Update changelog
-just changelog
-```
-
-### Documentation
-
-```bash
-# Generate documentation
-just doc
-
-# Serve documentation locally
-just doc-serve
-```
 
 ## 📊 Monitoring and Logging
 
@@ -493,7 +426,7 @@ just doc-serve
 
 1. **Fork** the repository
 2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`just commit`)
+3. **Commit** your changes
 4. **Push** to the branch (`git push origin feature/amazing-feature`)
 5. **Open** a Pull Request
 
@@ -534,14 +467,7 @@ just doc-serve
 - **Error Handling**: Secure error messages without sensitive information
 - **Dependency Scanning**: Regular security updates for dependencies
 
-### Security Scanning
-```bash
-# Run security checks
-just check-security
 
-# Update dependencies
-just update-deps
-```
 
 ## 📄 License
 
