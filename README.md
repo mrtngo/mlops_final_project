@@ -95,10 +95,7 @@ WANDB_API_KEY=your-wandb-api-key
 ### 1. Run the Complete Pipeline
 ```bash
 # Using the main orchestrator
-PYTHONPATH=src
-python main.py
-
-
+PYTHONPATH=src python main.py
 ```
 
 ### 2. Start the API Server
